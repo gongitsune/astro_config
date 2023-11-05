@@ -8,6 +8,11 @@ return {
       "javascript",
       "typescript",
       "rust",
+      "vim",
+      "regex",
+      "bash",
+      "markdown",
+      "markdown_inline",
     })
   end,
 }

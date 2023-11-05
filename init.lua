@@ -58,6 +58,21 @@ return {
           offsetEncoding = "utf-8",
         },
       },
+      denols = function(opts)
+        opts.root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
+        opts.single_file_support = false
+        return opts
+      end,
+      tsserver = function(opts)
+        opts.root_dir = require("lspconfig.util").root_pattern "package.json"
+        opts.single_file_support = false
+        return opts
+      end,
+    },
+    setup_handlers = {
+      tsserver = function(_, opts) require("typescript").setup { server = opts } end,
+      denols = function(_, opts) require("deno-nvim").setup { server = opts } end,
+      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end,
     },
   },
 
@@ -89,6 +104,6 @@ return {
     --   },
     -- }
     vim.g.copilot_no_tab_map = true
-    vim.api.nvim_set_keymap("i", "<C-i>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+    vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
   end,
 }

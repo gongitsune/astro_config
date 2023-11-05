@@ -17,10 +17,6 @@ return {
       })
     end,
   },
-  {
-    "github/copilot.vim",
-    lazy = false,
-  },
   "simrat39/rust-tools.nvim",
   "jose-elias-alvarez/typescript.nvim",
   "sigmasd/deno-nvim",
