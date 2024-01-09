@@ -13,7 +13,7 @@ return {
       "bash",
       "markdown",
       "markdown_inline",
-      "nim",
+      "toml",
     })
   end,
 }

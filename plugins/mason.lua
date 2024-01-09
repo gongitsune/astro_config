@@ -12,7 +12,7 @@ return {
         "tsserver",
         "denols",
         "rust_analyzer",
-        "nimls",
+        "taplo",
       })
     end,
   },
